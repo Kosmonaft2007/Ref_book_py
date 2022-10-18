@@ -3,20 +3,22 @@
 '''
 
 
-import model.add_contact as add
+import model.contact_actions_handler as cah
 import model.import_contacts as imp
 import model.export_contacts as exp
 
 
-path = 'ou.csv'
+path = 'out.csv'
 
 if __name__ == '__main__':
 	
-	#ls = add.create_contact()
-	#imp.import_csv(ls, path)
-	
-	print(exp.show_all_contacts(path))
+	while True:
+		ls = cah.create_contact()
+		print(ls)
+		imp.import_csv(ls, path, 'a')
+		print(exp.show_all_contacts(path))
 
 	#print(exp.show_selected_contact(path))
 	
-	#print(exp.read_data(path))
+	#print(cah.delete_contact(path))
+	#print(exp.show_all_contacts(path))
