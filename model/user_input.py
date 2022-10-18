@@ -1,3 +1,5 @@
+import logs
+
 
 # ввод данных пользователем
 def input_data():
@@ -10,8 +12,9 @@ def input_data():
 def check_input_string(desc: str):
 	while True:
 		val = input('Введите данные в поле "{}": '.format(desc))
-		if len(val) < 3 or val.isspace():
+		if len(val) < 3 or val.isspace() or not val.isalpha():
 			print('поле "{}" должно быть больше 3 букв и не пустым.'.format(desc))
+			logs.input_logger('Пользователь ввел некорректные данные в поле')
 			continue
 		return val
 
@@ -19,7 +22,8 @@ def check_input_string(desc: str):
 def check_input_digit(desc: str):
 	while True:
 		val = input('Введите данные в поле "{}": '.format(desc))
-		if not val.isnumeric() or val.isspace():
+		if not val.isdigit() or val.isspace():
 			print('поле "{}" должно быть из цифр и не пустым.'.format(desc))
+			logs.input_logger('Пользователь ввел некорректные данные в поле')
 			continue
 		return val
