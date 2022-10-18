@@ -14,6 +14,7 @@ def check_input_string(desc: str):
 		val = input('Введите данные в поле "{}": '.format(desc))
 		if len(val) < 3 or val.isspace() or not val.isalpha():
 			print('поле "{}" должно быть больше 3 БУКВ и не пустым.'.format(desc))
+			logs.input_logger('Пользователь ввел некорректные данные')
 			continue
 		return val
 
@@ -23,5 +24,6 @@ def check_input_digit(desc: str):
 		val = input('Введите данные в поле "{}": '.format(desc))
 		if not val.isdigit() or val.isspace():
 			print('поле "{}" должно быть из ЦИФР и не пустым.'.format(desc))
+			logs.input_logger('Пользователь ввел некорректные данные')
 			continue
 		return val

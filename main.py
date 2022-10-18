@@ -3,23 +3,23 @@
 '''
 
 
-import model.contact_actions_handler as cah
-import model.import_contacts as imp
+import ctrl
 import model.export_contacts as exp
 
 
 path = 'out.csv'
 # cah.delete_contact(path)
-exp.show_all_contacts(path)
+#exp.show_all_contacts(path)
 
 if __name__ == '__main__':
+	ctrl.main(path)
 	
-	while True:
-		ls = cah.create_contact()
-		print(ls)
-		imp.import_csv(ls, path, 'a')
-		print(exp.show_all_contacts(path))
-		break
+	# while True:
+	# 	ls = cah.create_contact()
+	# 	print(ls)
+	# 	imp.import_csv(ls, path, 'a')
+	# 	print(exp.show_all_contacts(path))
+	# 	break
 
 	#print(exp.show_selected_contact(path))
 	
