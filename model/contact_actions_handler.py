@@ -23,3 +23,4 @@ def delete_contact(path):
 			imp_c.rewrite_csv(list_contact, path, 'w')
 			return
 	print('Контакт : {} {} не найден.'.format(surname, name)) 
+
