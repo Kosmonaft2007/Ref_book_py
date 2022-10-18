@@ -4,12 +4,4 @@ igor,petrov,09876
 oleg,ivanov,908654
 petr,ivanov,908654
 kirill,gusev,654322
-Екатерина,Ширкевич,1234567
-Ekaterina,Shirkevich,1
-===,^66,123
-trf^,123,7
-123,123,123
-False,<built-in method isalpha of str object at 0x000001A0C06E95C0>,<built-in method isdigit of str object at 0x000001A0C0832030>
-False,<built-in method isalpha of str object at 0x000001A0C06E98A0>,<built-in method isdigit of str object at 0x000001A0C0832EF0>
-Egor,Ivanov,0
-egor,ivanov,123
+Kat,ghb,123

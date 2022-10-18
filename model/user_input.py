@@ -1,3 +1,5 @@
+import logs
+
 
 # ввод данных пользователем
 def input_data():
