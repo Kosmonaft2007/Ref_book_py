@@ -1,7 +1,7 @@
 import csv
 
 
-def import_csv(data, path, rec_mode):
+def import_to_csv(data, path, rec_mode):
 	with open(path, rec_mode, newline='') as file:
 		writer = csv.writer(file)
 		writer.writerow(data)

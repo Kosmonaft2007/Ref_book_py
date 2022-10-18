@@ -24,11 +24,11 @@ def show_all_contacts(path):
 	
 	list_contact = read_data(path)
 	
-	print('''\t фамилия || имя || телефон''')
-	print('\t', '=' * 25)
+	print('||', 'фамилия'.center(15),  '||', 'имя'.center(15), '||', 'телефон'.center(15), '||')
+	print('=' * 60)
 	for person in list_contact:
-		print(f'\t {person[1]} || {person[0]} || {person[2]}')
-	print('\t', '=' * 25)
+		print('||', person[0].center(15),  '||', person[1].center(15), '||', person[2].center(15), '||')
+	print('=' * 60)
 
 
 
@@ -43,9 +43,9 @@ def show_selected_contact(path):
 	surname = u_in.check_input_string('Фамилия')
 	
 	for person in list_contact:
-		if name == person[0] and surname == person[1] in person:
+		if name.lower() == person[0].lower() and surname.lower() == person[1].lower() in person:
 			index = list_contact.index(person)
-			print(index)
+			print(f' {person[0]} {person[1]} успешно удалён.')
 			return list_contact[index]
 	print('Контакт : {} {} не найден.'.format(surname, name))
 

@@ -1,4 +1,4 @@
-import logs
+from logger import logs
 
 
 # ввод данных пользователем
@@ -16,7 +16,7 @@ def check_input_string(desc: str):
 			print('поле "{}" должно быть больше 3 БУКВ и не пустым.'.format(desc))
 			logs.input_logger('Пользователь ввел некорректные данные')
 			continue
-		return val
+		return val.capitalize()
 
 # ввод данных и проверка числовых данных(оптимизация кода)
 def check_input_digit(desc: str):
@@ -27,3 +27,11 @@ def check_input_digit(desc: str):
 			logs.input_logger('Пользователь ввел некорректные данные')
 			continue
 		return val
+
+
+def choice_menu_input(max_range):
+	while(True):
+		i = input("Выбрерите один из вариантов работы: ")
+		if 1 <= i <= max_range and i.isdigit():
+			return int(i)
+		print("Вам надо ввести число")

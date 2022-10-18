@@ -16,10 +16,12 @@ def delete_contact(path):
 	surname = u_in.check_input_string('Фамилия')
 	
 	for person in list_contact:
-		if name == person[0] and surname == person[1] in person:
+		if name.lower() == person[0].lower() and surname.lower() == person[1].lower() in person:
 			index = list_contact.index(person)
 			list_contact.pop(index)
+			print('=' * 60)
 			print(f'Контакт {person[0]} {person[1]} успешно удалён.')
+			print('=' * 60)
 			imp_c.rewrite_csv(list_contact, path, 'w')
 			return
 	print('Контакт : {} {} не найден.'.format(surname, name)) 
