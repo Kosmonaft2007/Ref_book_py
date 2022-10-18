@@ -10,8 +10,8 @@ def input_data():
 def check_input_string(desc: str):
 	while True:
 		val = input('Введите данные в поле "{}": '.format(desc))
-		if len(val) < 3 or val.isspace():
-			print('поле "{}" должно быть больше 3 букв и не пустым.'.format(desc))
+		if len(val) < 3 or val.isspace() or not val.isalpha():
+			print('поле "{}" должно быть больше 3 БУКВ и не пустым.'.format(desc))
 			continue
 		return val
 
@@ -19,7 +19,7 @@ def check_input_string(desc: str):
 def check_input_digit(desc: str):
 	while True:
 		val = input('Введите данные в поле "{}": '.format(desc))
-		if not val.isnumeric() or val.isspace():
-			print('поле "{}" должно быть из цифр и не пустым.'.format(desc))
+		if not val.isdigit() or val.isspace():
+			print('поле "{}" должно быть из ЦИФР и не пустым.'.format(desc))
 			continue
 		return val
