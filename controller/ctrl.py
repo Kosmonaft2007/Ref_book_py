@@ -24,7 +24,7 @@ def run():
 			us_if.menu_contact_actions()	# меню действий с контактов(создание/удаление)
 			i = inp.choice_menu_input(4)	# ввод выбора действия
 			if i == 1:
-				log.oper_logger('Запущено создание контакта')
+				log.oper_logger('Создание контакта')
 				print('-' * 50)
 				print('Вы выбрали "Создать контакт"')
 				print('-' * 50)
@@ -35,13 +35,13 @@ def run():
 				print('=' * 60)
 				imp_c.save_data(cc_list, 'a')	# сохранение данных о контакте в файл
 			elif i == 2:
-				log.oper_logger('Запущено удаление контакта')
+				log.oper_logger('Удаление контакта')
 				print('-' * 50)
 				print('Вы выбрали "Удалить контакт"')
 				print('-' * 50)
 				cah.delete_contact(path)	# удаление контакта
 			elif i == 3:
-				log.oper_logger('Запущен возврат в главное меню')
+				log.oper_logger('Возврат в главное меню')
 				print('-' * 50)
 				print("Вернуться в главное меню")
 				print('-' * 50)
@@ -57,19 +57,19 @@ def run():
 			us_if.export_menu()	# меню экспорта контактов из файла
 			i = inp.choice_menu_input(4)
 			if i == 1:
-				log.oper_logger('Запущен вывод всех данных')
+				log.oper_logger('Вывод всех данных')
 				print('-' * 50)
 				print('Вы выбрали "Вывод всех данных"')
 				print('-' * 50)
 				exp.show_all_contacts(path)	# показать все контакты
 			elif i == 2:
-				log.oper_logger('Запущен вывод информации о контакте')
+				log.oper_logger('Вывод информации о контакте')
 				print('-' * 50)
 				print('Вы выбрали "Вывод информации о контакте"')
 				print('-' * 50)
 				exp.show_selected_contact(path)	# показать отдельно взятый контакт по имени и фамилии
 			elif i == 3:
-				log.oper_logger('Запущен возврат в главное меню')
+				log.oper_logger('Возврат в главное меню')
 				print('-' * 50)
 				print("Вернуться в главное меню")
 				print('-' * 50)
@@ -85,7 +85,7 @@ def run():
 			us_if.import_menu()	# меню импорта в .csv формат
 			i = inp.choice_menu_input(3)
 			if i == 1:
-				log.oper_logger('Запущен импорт в файл')
+				log.oper_logger('Импорт в файл')
 				print('-' * 50)
 				print('Вы выбрали "Импортировать в файл"')
 				print('-' * 50)
@@ -95,7 +95,7 @@ def run():
 					print('Файл успешно скопирован.')
 					print('-' * 50)
 			elif i == 2:
-				log.oper_logger('Запущен возврат в главное меню')
+				log.oper_logger('Возврат в главное меню')
 				print('-' * 50)
 				print("Вернуться в главное меню")
 				print('-' * 50)

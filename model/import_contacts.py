@@ -1,6 +1,6 @@
 import csv
 import shutil
-import os
+
 
 # сохранение данных в файл
 def save_data(data, rec_mode):
