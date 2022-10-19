@@ -2,12 +2,8 @@ import csv
 import exceptions.excepts as ex
 import model.user_input as u_in
 
-
+# чтение из файла и возврат данных в виде списка
 def read_data(path):
-	'''
-	Функция, читает данные из файла в список
-	'''
-	
 	ex.read_file_except(path)
 	with open(path, "r") as file:
 		reader = csv.reader(file)
@@ -16,37 +12,33 @@ def read_data(path):
 			data_list.append(row)
 		return data_list
 			
-
+# вывести информацию о всех контактах в списке
 def show_all_contacts(path):
-	'''
-	Функция, выводит все контакты из указанного .csv файла.
-	'''
-	
-	list_contact = read_data(path)
-	
-	print('''\t фамилия || имя || телефон''')
-	print('\t', '=' * 25)
+	list_contact = read_data(path)	# чтение данных из файла
+	print('\n' * 20)
+	print('=' * 61)
+	print('||', 'фамилия'.center(15),  '||', 'имя'.center(15), '||', 'телефон '.center(15), ' ||')
+	print('=' * 61)
 	for person in list_contact:
-		print(f'\t {person[1]} || {person[0]} || {person[2]}')
-	print('\t', '=' * 25)
+		print('||', person[0].center(15),  '||', person[1].center(15), '||', person[2].center(15), '||')
+	print('=' * 61)
 
 
-
+# вывод информации о одтельно взятом контакте по имени и фамилии
 def show_selected_contact(path):
-	'''
-	Функция, выводит информацию о контакте по указанным фамилии и имени
-	'''
-	
-	list_contact = read_data(path)
+	list_contact = read_data(path)	# чтение данных из файла
 	print('Введите параметры поиска: ')
-	name = u_in.check_input_string('Имя')
-	surname = u_in.check_input_string('Фамилия')
+	name = u_in.check_input_string('Имя')	# ввод данных контакта 'имя'
+	surname = u_in.check_input_string('Фамилия')	# ввод данных контакта 'фамилия'
 	
-	for person in list_contact:
-		if name == person[0] and surname == person[1] in person:
-			index = list_contact.index(person)
-			print(index)
-			return list_contact[index]
+	for person in list_contact:	# поиск контакта в полученном списке
+		if name.lower() == person[0].lower() and surname.lower() == person[1].lower():
+			index = list_contact.index(person)	# получаем индекс контакта
+			print('\n' * 20)
+			print('=' * 60)
+			print('||', person[0].center(15),  '||', person[1].center(15), '||', person[2].center(15), ' ||')
+			print('=' * 60)
+			return
 	print('Контакт : {} {} не найден.'.format(surname, name))
 
 
