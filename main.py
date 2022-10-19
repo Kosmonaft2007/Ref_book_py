@@ -1,10 +1,8 @@
+import controller.ctrl as ctrl
+
+
 '''
-модуль будет переделан, вариант для тестерования
+		Запуск программы
 '''
-
-from controller import ctrl
-
-path = 'out.csv'
-
 if __name__ == '__main__':
-	ctrl.main(path)
+	ctrl.run()
